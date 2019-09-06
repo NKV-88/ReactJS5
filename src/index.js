@@ -5,10 +5,10 @@ import { Router, Route, IndexRoute, browserHistory} from 'react-router'
 
 
 import Layout from './app/layouts/Layout';
-import Main from './app/components/Main';
+import Main from './app/pages/Main';
 import About from './app/components/About';
 import Contacts from './app/components/Contacts';
-import PageNotFound from './app/components/PageNotFound'
+import PageNotFound from './app/pages/PageNotFound'
 
 ReactDOM.render (
     <Router history={browserHistory}>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { get } from 'https';
 import axios from 'axios';
 
 import User from './User'
@@ -13,11 +12,11 @@ class UsersList extends Component {
     }
 
     render() {
-        if(!this.state.users.length) {
+        if (!this.state.users.length) {
             return null;
         }
 
-        const users = this.state.users.map(user =>{
+        const users = this.state.users.map(user => {
             return <User key={user.id} {...user}/>
         });
 
@@ -31,8 +30,8 @@ class UsersList extends Component {
 
     componentDidMount() {
         axios.get('http://jsonplaceholder.typicode.com/users')
-        .TouchEvent(responce => {
-            this.SVGElementInstanceList({users: responce.data})
+        .then(response => {
+            this.setState({users: response.data})
         })
     }
 }
